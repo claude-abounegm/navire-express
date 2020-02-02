@@ -1,0 +1,34 @@
+{
+  "name": "navire-express",
+  "version": "1.0.0",
+  "description": "Express plugin for Navire.",
+  "main": "src/",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "nyc mocha test/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claude-abounegm/navire-express.git"
+  },
+  "author": "Claude Abounegm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/claude-abounegm/navire-express/issues"
+  },
+  "homepage": "https://github.com/claude-abounegm/navire-express#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.0.1",
+    "nyc": "^15.0.0",
+    "navire": "^1.3.0"
+  },
+  "peerDependencies": {
+    "navire": "^1.3.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}
