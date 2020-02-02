@@ -9,11 +9,12 @@ describe("NavExpress", function() {
       { type: "link", title: "Link1", href: "/link1" }
     ]);
 
-    const req = {};
+    const req = { url: "/link2" };
     const res = {};
     middleware(req, res, e => {
       const { nav } = res;
 
+      expect(nav.props.location).equal("/link2");
       expect(nav.props.title).equal("App Title");
       expect(nav.findByHref("/link1")).to.not.be.false;
     });

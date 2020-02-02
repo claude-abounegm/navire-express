@@ -20,14 +20,16 @@ function middleware() {
   };
 }
 
-function init(opts, initFn) {
+function init(opts, init) {
   return (req, res, next) => {
     if (!_.isPlainObject(res.locals)) {
       res.locals = {};
     }
 
     try {
-      const nav = new Nav(opts, initFn);
+      const { props, ...rest } = opts || {};
+      const location = req.url;
+      const nav = new Nav({ props: { ...props, location }, ...rest }, init);
 
       if (!nav.express) {
         nav.express = middleware.bind(nav);
