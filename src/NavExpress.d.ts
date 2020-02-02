@@ -1,5 +1,5 @@
 import express from "express";
-import Nav from "navire";
+import Nav from "navire/src/Nav";
 
 declare class NavExpress {
   static init<PropsType>(
