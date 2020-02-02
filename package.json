@@ -1,8 +1,8 @@
 {
   "name": "navire-express",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Express plugin for Navire.",
-  "main": "src/",
+  "main": "src/index.js",
   "directories": {
     "test": "test"
   },
