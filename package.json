@@ -1,6 +1,6 @@
 {
   "name": "navire-express",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Express plugin for Navire.",
   "main": "src/",
   "directories": {
@@ -22,10 +22,13 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^7.0.1",
-    "nyc": "^15.0.0"
+    "nyc": "^15.0.0",
+    "navire": "^1.4.0"
+  },
+  "peerDependencies": {
+    "navire": "^1.4.0"
   },
   "dependencies": {
-    "lodash": "^4.17.15",
-    "navire": "^1.4.0"
+    "lodash": "^4.17.15"
   }
 }
