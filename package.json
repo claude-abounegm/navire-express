@@ -1,6 +1,6 @@
 {
   "name": "navire-express",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Express plugin for Navire.",
   "main": "src/index.js",
   "directories": {
@@ -22,8 +22,8 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^7.0.1",
-    "nyc": "^15.0.0",
-    "navire": "^1.4.0"
+    "navire": "^1.5.1",
+    "nyc": "^15.0.0"
   },
   "peerDependencies": {
     "navire": "^1.4.0"

@@ -14,9 +14,9 @@ npm i navire navire-express
 const NavExpress = require("navire-express");
 
 router.use(
-  NavExpress.init({ props: { title: "App Title" } }, [
-    { type: "link", title: "Link1", href: "/link1" }
-  ])
+  NavExpress.init([{ type: "link", title: "Link1", href: "/link1" }], {
+    props: { title: "App Title" }
+  })
 );
 
 // ...

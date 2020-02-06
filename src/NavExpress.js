@@ -3,24 +3,7 @@
 const _ = require("lodash");
 const Nav = require("navire");
 
-function middleware() {
-  return (req, res, next) => {
-    this._showArgs.push(req, res);
-
-    // TODO: Change this later to a centralized
-    // app variable. This a temp workaround.
-    if (this.props.title) {
-      res.locals.appName = this.props.title;
-    }
-
-    res.locals.nav = this;
-    res.nav = this;
-
-    next();
-  };
-}
-
-function init(opts, init) {
+function init(init, opts) {
   return (req, res, next) => {
     if (!_.isPlainObject(res.locals)) {
       res.locals = {};
@@ -29,13 +12,14 @@ function init(opts, init) {
     try {
       const { props, ...rest } = opts || {};
       const location = req.url;
-      const nav = new Nav({ props: { ...props, location }, ...rest }, init);
+      const nav = new Nav(init, { props: { ...props, location }, ...rest });
 
-      if (!nav.express) {
-        nav.express = middleware.bind(nav);
-      }
+      // this will add [req, res] to any show() called in navire
+      nav._showArgs.push(req, res);
+      res.locals.nav = nav;
+      res.nav = nav;
 
-      nav.express()(req, res, next);
+      next();
     } catch (e) {
       next(e);
     }
