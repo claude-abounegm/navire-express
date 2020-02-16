@@ -1,7 +1,7 @@
 "use strict";
 
 const _ = require("lodash");
-const Nav = require("navire");
+const Navire = require("navire");
 
 function init(init, opts) {
   return (req, res, next) => {
@@ -12,12 +12,15 @@ function init(init, opts) {
     try {
       const { props, ...rest } = opts || {};
       const location = req.url;
-      const nav = new Nav(init, { props: { ...props, location }, ...rest });
+      const navire = new Navire(init, {
+        props: { ...props, location },
+        ...rest
+      });
 
       // this will add [req, res] to any show() called in navire
-      nav._showArgs.push(req, res);
-      res.locals.nav = nav;
-      res.nav = nav;
+      navire._showArgs.push(req, res);
+      res.locals.navire = navire;
+      res.navire = navire;
 
       next();
     } catch (e) {

@@ -1,5 +1,5 @@
 "use strict";
 
-const NavExpress = require("./NavExpress");
+const NavireExpress = require("./NavireExpress");
 
-module.exports = NavExpress;
+module.exports = NavireExpress;
