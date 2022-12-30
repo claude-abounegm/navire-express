@@ -21,7 +21,7 @@
   "homepage": "https://github.com/claude-abounegm/navire-express#readme",
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^7.0.1",
+    "mocha": "^10.2.0",
     "navire": "^1.6.1",
     "nyc": "^15.0.0"
   },
